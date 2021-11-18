@@ -1,18 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/style.css">
-    <title><%= id %></title>
-</head>
-<body>
-    
-</html>
-
- -->
-
  <!DOCTYPE html>
  <html style="font-size: 16px;">
    <head>
@@ -70,13 +55,22 @@
              <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
            </div> -->
          </nav>
-       </div></header><br><br><br><br><br><br><br><br>
+      </div></header><br><br><br><br><br><br><br><br>
+      <div class="u-container-layout u-valign-bottom-xs u-container-layout-2">
+        <div class="u-clearfix u-custom-html u-custom-html-1">
+            <input type="text" name="id" id="id" onchange="change()">
+        </div>
+        <a href="/qlist" id="submiter" class="u-border-2 u-border-palette-2-base u-btn u-btn-round u-button-style u-hover-palette-2-base u-none u-radius-6 u-text-body-color u-text-hover-white u-btn-2">문제 검색하기</a>
+      </div>
      
-       <div id="qlist_div">
-
-       </div>
-     <script src="../../static/js/loadfile.js"></script>
-     <script src="../../static/js/check.js"></script>
+      <div id="qlist_div">
+        
+      </div>
+      <script>
+      var idlist = `<%= ids %>`;
+      var filelist = `<%= filelist %>`;
+      </script>
+      <script src="../../static/js/loadqlist.js"></script>
      
      </section>
      <style class="u-overlap-style">.u-overlap:not(.u-sticky-scroll) .u-header {

@@ -72,6 +72,25 @@ app.get('/q/:id', (req,res) => {
     
 })
 
+app.get('/qlist', (req,res) => {
+    var ids = fs.readFileSync('./static/server/id.txt').toString('utf-8')
+    var idid = ids.split('\n')
+    var filelist = ''
+    for (var i in idid) {
+        console.log(`./uploads/${idid[i]}.txt`);
+        try {
+            var file = fs.readFileSync(`./uploads/${idid[i]}.txt`).toString('utf-8').replaceAll('\n','/')
+            console.log(file);
+        }catch (error) {
+            var file = ' '
+            console.log('no' +error);
+        }
+        filelist += file+'\n'
+    }
+    console.log(filelist);
+    res.render(view+'qlist.html', {ids:ids,filelist:filelist})
+})
+
 app.get('/upq',(req,res) => {
     res.sendFile(view+'upload.html')
 })
